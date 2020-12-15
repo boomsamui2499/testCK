@@ -10,7 +10,13 @@ app.use(express.urlencoded({extended: false}));
 
 
 app.use(cors());
+const logger = require("./winston.js");
 
+logger.info(`Test info Log!`);
+logger.error(`Test error Log!`);
+
+const log = require('log-to-file');
+log('log date', 'my-log.log');
 const routeLogin = require('./routes/login');
 const routeProduct = require('./routes/product');
 
