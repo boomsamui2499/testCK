@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2020 at 03:49 PM
+-- Generation Time: Dec 17, 2020 at 11:23 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -31,15 +31,17 @@ CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
   `product_name` varchar(100) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
-  `discription` varchar(100) DEFAULT NULL
+  `description` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `product_name`, `price`, `discription`) VALUES
-(1, 'เสื้อลูฟี่', 790, 'รุ่น limited');
+INSERT INTO `product` (`product_id`, `product_name`, `price`, `description`) VALUES
+(1, 'เสื้อลูฟี่', 790, 'รุ่น limited'),
+(7, 'jacket luffy', 3390, 'limited'),
+(10, ' jacket usop', 250, 'limited');
 
 -- --------------------------------------------------------
 
@@ -87,7 +89,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user`

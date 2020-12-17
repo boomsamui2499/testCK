@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "0e3f6170-b3de-42b7-9cb4-218b178ad57e",
+		"name": "TestCK_Think",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "127.0.0.1:5000/api/login/checklogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"123\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "127.0.0.1:5000/api/login/checklogin",
+				"description": "ล็อคอิน เพื่อ นำtoken มาใช้สิทธ์ในการเข้าถึง\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:5000/api/product/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjU5ODE4YmRjZmNmOTI0NGIzNmJmNTU1NmJjNDAzMTBlIiwiaWF0IjoxNjA4MTgyNjYzfQ.oRdo9UgJhszHsLhEzT5X5oWiyUS-98XHdDNzBdGpCx0"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_name\":\" jacket usop\",\r\n    \"description\":\"limited\",\r\n    \"price\":250\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "127.0.0.1:5000/api/product/add",
+				"description": "เพิ่มข้อมูล"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:5000/api/product/updateProduct",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"tokenType": "",
+						"addTokenTo": "header"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_name\":\"jacket luffy\",\r\n    \"description\":\"limited\",\r\n    \"price\":3390,\r\n    \"product_id\":\"7\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "127.0.0.1:5000/api/product/update",
+				"description": "อัพเดตข้อมูล"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:5000/api/product/deleteProduct",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"tokenType": "",
+						"addTokenTo": "header"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_id\":7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "127.0.0.1:5000/api/product/delete",
+				"description": "ลบข้อมูล"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:5000/api/product/select",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjU5ODE4YmRjZmNmOTI0NGIzNmJmNTU1NmJjNDAzMTBlIiwiaWF0IjoxNjA4MTgyNjYzfQ.oRdo9UgJhszHsLhEzT5X5oWiyUS-98XHdDNzBdGpCx0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "127.0.0.1:5000/api/product/select",
+				"description": "ดึงข้อมูลมาโชว์"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:5000/api/login/checklogin",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"tokenType": "",
+						"addTokenTo": "header"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"123\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "127.0.0.1:5000/api/logout/checklogout",
+				"description": "ออกจากระบบ จะลบToken ออกทันที "
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
