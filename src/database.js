@@ -23,11 +23,8 @@ pool.getConnection((err, connection) => {
             console.error('Database connection was refused.');
         }
     }
-
     if (connection) connection.release();
-
-    return;
+        return;
 })
-
 pool.query = util.promisify(pool.query).bind(pool);
 module.exports = pool;

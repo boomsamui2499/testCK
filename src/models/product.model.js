@@ -3,13 +3,12 @@ const db = require('../database')
 const Product = function (productData) {
     this.product_id = productData.product_id;
     this.product_name = productData.product_name;
-    this.discription = productData.discription;
+    this.description = productData.description;
     this.price = productData.price;
 };
 
 Product.select = async (data, result) => {
     let sql = 'select * from product';
-
     const res = await db.query(sql);
     if (res.length == 0) {
         result({ status: false, dataLists: res }, null);
@@ -31,7 +30,7 @@ Product.add = async (data, result) => {
 
 
 Product.update = async (data, result) => {
-    await db.query('update product set product_name=? ,price=? ,discription=? where product_id=?', [data.product_name, data.price, data.discription, data.product_id])
+    await db.query('update product set product_name=? ,price=? ,description=? where product_id=?', [data.product_name, data.price, data.description, data.product_id])
         .then(() => {
             result(null, { status: true, message: 'update success' });
         }).catch(error => {
